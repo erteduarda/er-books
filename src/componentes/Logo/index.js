@@ -14,7 +14,7 @@ function Logo() {
     return (
         <LogoContainer>
             <Imagem
-                src={logo} F
+                src={logo}
             ></Imagem>
             <p>
                 <strong>Er</strong>-Books

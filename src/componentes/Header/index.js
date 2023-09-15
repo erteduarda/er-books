@@ -14,7 +14,9 @@ const HeaderContainer = styled.div`
 function Header() {
     return (
         <HeaderContainer>
-            <Link to="/">
+            <Link 
+                style={{textDecoration: 'none', color: 'black'}} 
+                to="/">
                 <Logo />
             </Link>
             <OpcoesHeader />

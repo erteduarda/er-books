@@ -17,6 +17,11 @@ const NovosLivrosContainer = styled.div`
     width: 100%;
     justify-content: center;
     cursor: pointer;
+
+    img {
+        width: 10%;
+        margin: 10px
+    }
 `
 
 function UltimosLancamentos() {

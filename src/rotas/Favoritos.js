@@ -1,11 +1,34 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components'
 import { getFavoritos, deletarFavoritos } from '../servicos/favoritos'
+import imagemLivro from '../imagens/livro.png'
 
 const AppContainer = styled.div`
-        width: 100vw;
-        height: 100vh;
-        background-image: linear-gradient(90deg, #002F52, #326589);
+    background-image: linear-gradient(90deg, #002F52 35%, #326589 165%);
+    color: #FFF;
+    text-align: center;
+    padding: 85px 0;
+    height: 100vw;
+    width: 100%;
+`
+
+const Lista = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    p {
+        width: 200px;
+    }
+
+    img {
+        width: 100px;
+    }
+
+    &:hover {
+        border: 1px solid white;
+    }
 `
 
 function Favoritos() {
@@ -28,9 +51,16 @@ function Favoritos() {
 
   return (
     <AppContainer>
+
       {favoritos.map(favorito => (
-        <p onClick={() => deletarFavorito(favorito.id)}>{favorito.nome}</p>
+        <Lista>
+          <img src={imagemLivro}></img>
+          <p onClick={() => deletarFavorito(favorito.id)}>
+            {favorito.nome}
+          </p>
+        </Lista>
       ))}
+
     </AppContainer>
   );
 }
